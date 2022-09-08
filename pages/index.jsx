@@ -29,10 +29,10 @@ export default function Home() {
     <Fragment>
       <div className="h-screen bg-black text-primary-50">
         <nav
-          className={`flex justify-between py-4 px-72 ${
-            showNavbar ? 'fixed z-10 w-full bg-black' : ''
+          className={`flex justify-center py-4 px-4 sm:justify-between sm:px-72 ${
+            showNavbar ? 'fixed z-50 w-full bg-black' : ''
           }`}>
-          <div className="">
+          <div>
             <Link href="/">
               <a className="flex items-center space-x-2">
                 <div className="relative h-8 w-8">
@@ -42,7 +42,7 @@ export default function Home() {
               </a>
             </Link>
           </div>
-          <div className="space-x-2">
+          <div className="hidden space-x-2 lg:block">
             <Link href="#about">
               <a className="group relative inline-flex items-center justify-center overflow-hidden rounded-full p-0.5 font-medium">
                 <span className="absolute h-full w-full bg-gradient-to-br group-hover:from-pink-700 group-hover:via-primary-600 group-hover:to-blue-600"></span>
@@ -69,39 +69,44 @@ export default function Home() {
             </Link>
           </div>
         </nav>
-        <header className="relative flex flex-col px-40 py-60">
-          <Cube className="absolute top-[210px] right-[280px] w-20 rotate-12"></Cube>
+        <header className="relative flex flex-col px-4 py-60 text-center sm:px-40 sm:text-left">
+          {/* <Cube className="absolute top-[210px] right-[280px] w-20 rotate-12"></Cube>
           <Cube className="absolute top-[280px] right-[300px] w-40 rotate-45"></Cube>
           <Cube className="absolute top-[400px] right-[220px] w-32"></Cube>
-          <Cube className="absolute top-[520px] right-[340px] w-10 rotate-90"></Cube>
+          <Cube className="absolute top-[520px] right-[340px] w-10 rotate-90"></Cube> */}
 
-          <h1 className="mt-10 text-6xl font-semibold">
+          <h1 className="mt-10 text-5xl font-semibold sm:text-6xl">
             <span className="bg-gradient-to-br from-blue-600 via-primary-600 to-pink-700 bg-clip-text text-transparent">
               Technology
             </span>{' '}
             Festival
           </h1>
-          <p className="mt-4 max-w-xl text-2xl font-light">
+          <p className="mt-2 max-w-xl font-light sm:mt-4 sm:text-2xl">
             Himpunan Mahasiswa Sistem Komputer Universitas Sriwijaya
           </p>
         </header>
       </div>
 
-      <main id="content" ref={content} className="min-h-screen space-y-60 p-40">
+      <main
+        id="content"
+        ref={content}
+        className="min-h-screen space-y-20 py-20 px-4 sm:space-y-60 sm:p-40">
         {/* --------------------------------- Tentang --------------------------------- */}
-        <section id="about" className="relative grid grid-cols-2">
-          <Cube className="absolute top-[210px] left-[0px] w-20 rotate-12"></Cube>
-          <Cube className="absolute top-[280px] left-[50px] w-40 rotate-45"></Cube>
+        <section
+          id="about"
+          className="relative grid grid-cols-1 text-center sm:grid-cols-2 sm:text-left">
+          {/* <Cube className="absolute top-[210px] left-[0px] w-20 rotate-12"></Cube>
+          <Cube className="absolute top-[280px] left-[50px] w-40 rotate-45"></Cube> */}
           <div className="flex items-center justify-center">
-            <div className="relative h-80 w-80">
+            <div className="relative h-40 w-40 sm:h-80 sm:w-80">
               <Image src="/technofest.png" alt="" layout="fill" objectFit="cover" />
             </div>
           </div>
-          <div className="max-w-lg">
+          <div className="mt-10 sm:mt-0 sm:max-w-lg">
             <h2 className="inline bg-gradient-to-br from-blue-600 via-primary-600 to-pink-700 bg-clip-text font-medium tracking-[10px] text-transparent">
               TENTANG
             </h2>
-            <p className="text-4xl">
+            <p className="px-10 text-3xl sm:text-4xl">
               <span className="font-semibold text-gray-700">Selamat datang</span> di Technofest 2022
             </p>
             <p className="mt-5 text-gray-500">
@@ -117,14 +122,14 @@ export default function Home() {
 
         {/* --------------------------------- Webinar --------------------------------- */}
         <section id="webinar" className="relative flex flex-col items-center">
-          <Cube className="absolute top-[20px] right-[0px] w-24 rotate-90"></Cube>
+          {/* <Cube className="absolute top-[20px] right-[0px] w-24 rotate-90"></Cube>
           <Cube className="rotate absolute top-[130px] right-[20px] w-10"></Cube>
-          <Cube className="absolute top-[180px] right-[80px] w-32 rotate-12"></Cube>
+          <Cube className="absolute top-[180px] right-[80px] w-32 rotate-12"></Cube> */}
           <div className="max-w-xl text-center">
             <h2 className="inline bg-gradient-to-br from-blue-600 via-primary-600 to-pink-700 bg-clip-text font-medium tracking-[10px] text-transparent">
               WEBINAR
             </h2>
-            <p className="text-4xl">
+            <p className="px-10 text-3xl sm:text-4xl">
               <span className="font-semibold text-gray-700">Webinar</span> are Coming Soon
             </p>
             <p className="mt-5 text-gray-500">
@@ -143,18 +148,18 @@ export default function Home() {
 
         {/* --------------------------------- Perlombaan --------------------------------- */}
         <section id="competition" className="relative flex flex-col items-center">
-          <Cube className="absolute top-[10px] left-[0px] w-32"></Cube>
+          {/* <Cube className="absolute top-[10px] left-[0px] w-32"></Cube>
           <Cube className="absolute top-[350px] left-[40px] w-20 rotate-12"></Cube>
-          <Cube className="absolute top-[280px] right-[60px] w-16 rotate-1"></Cube>
+          <Cube className="absolute top-[280px] right-[60px] w-16 rotate-1"></Cube> */}
           <div className="max-w-xl text-center">
             <h2 className="inline bg-gradient-to-br from-blue-600 via-primary-600 to-pink-700 bg-clip-text font-medium tracking-[10px] text-transparent">
               PERLOMBAAN
             </h2>
-            <p className="text-4xl">
+            <p className="px-10 text-3xl sm:text-4xl">
               <span className="font-semibold text-gray-700">Perlombaan</span> pada Tahun Ini
             </p>
           </div>
-          <div className="z-10 mt-10 grid grid-cols-4 gap-x-10 text-center">
+          <div className="z-10 mt-10 grid grid-cols-1 gap-y-10 text-center sm:grid-cols-4 sm:gap-y-0 sm:gap-x-10">
             <div className="flex flex-col items-center rounded-xl px-2 py-5 shadow-xl backdrop-blur transition duration-300 hover:scale-105">
               <Uiux className="w-24"></Uiux>
               <h3 className="mt-5 text-2xl font-medium">UI/UX Design</h3>
@@ -174,7 +179,7 @@ export default function Home() {
           </div>
         </section>
       </main>
-      <footer className="flex flex-col items-center justify-center bg-black py-14 text-primary-50">
+      <footer className="flex flex-col items-center justify-center bg-black py-8 text-primary-50 sm:py-14">
         <div className="relative h-10 w-10">
           <Image src="/technofest.png" alt="" layout="fill" objectFit="cover" />
         </div>
@@ -184,5 +189,5 @@ export default function Home() {
         </p>
       </footer>
     </Fragment>
-  )
+  );
 }
