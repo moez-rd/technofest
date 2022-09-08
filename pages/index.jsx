@@ -9,19 +9,25 @@ import Link from 'next/link';
 
 export default function Home() {
   const [showNavbar, setShowNavbar] = useState(false);
+  const [showMobileNavbar, setShowMobileNavbar] = useState(false);
   const content = useRef();
 
   useEffect(() => {
     window.onscroll = function () {
-      scrollFunction();
+      handleNavbar();
+      handleMobileNavbar();
     };
 
-    function scrollFunction() {
+    function handleNavbar() {
       if (content.current?.offsetTop <= window.pageYOffset) {
         setShowNavbar(true);
       } else {
         setShowNavbar(false);
       }
+    }
+
+    function handleMobileNavbar() {
+      setShowMobileNavbar(false);
     }
   });
 
@@ -29,7 +35,7 @@ export default function Home() {
     <Fragment>
       <div className="h-screen bg-black text-primary-50">
         <nav
-          className={`flex justify-center py-4 px-4 sm:justify-between sm:px-72 ${
+          className={`flex items-center justify-between py-4 px-4 sm:px-72 ${
             showNavbar ? 'fixed z-50 w-full bg-black' : ''
           }`}>
           <div>
@@ -41,6 +47,13 @@ export default function Home() {
                 <p className="translate-y-0.5 font-semibold">Technofest</p>
               </a>
             </Link>
+          </div>
+          <div className="sm:hidden">
+            <button onClick={() => setShowMobileNavbar(!showMobileNavbar)}>
+              <span className="mx-0.5 inline-block h-3 w-3 rounded-full bg-primary-500"></span>
+              <span className="mx-0.5 inline-block h-3 w-3 rounded-full bg-pink-500"></span>
+              <span className="mx-0.5 inline-block h-3 w-3 rounded-full bg-blue-500"></span>
+            </button>
           </div>
           <div className="hidden space-x-2 lg:block">
             <Link href="#about">
@@ -69,11 +82,40 @@ export default function Home() {
             </Link>
           </div>
         </nav>
+        <nav
+          className={`fixed top-20 -right-4 z-50 grid grid-cols-1 items-center space-y-2 rounded-lg ${
+            showMobileNavbar ? 'transition duration-300' : 'translate-x-48 transition duration-300'
+          }`}>
+          <Link href="#about">
+            <a className="group relative inline-flex items-center justify-center overflow-hidden rounded-full p-0.5 font-medium">
+              <span className="absolute h-full w-full bg-gradient-to-br group-hover:from-pink-700 group-hover:via-primary-600 group-hover:to-blue-600"></span>
+              <span className="relative h-full w-full rounded-full bg-black px-5 py-1.5 transition-all duration-300 ease-out group-hover:bg-opacity-0">
+                <span className="relative text-white">Tentang</span>
+              </span>
+            </a>
+          </Link>
+          <Link href="#competition">
+            <a className="group relative inline-flex items-center justify-center overflow-hidden rounded-full p-0.5 font-medium">
+              <span className="absolute h-full w-full bg-gradient-to-br group-hover:from-pink-700 group-hover:via-primary-600 group-hover:to-blue-600"></span>
+              <span className="relative h-full w-full rounded-full bg-black px-5 py-1.5 transition-all duration-300 ease-out group-hover:bg-opacity-0">
+                <span className="relative text-white">Perlombaan</span>
+              </span>
+            </a>
+          </Link>
+
+          <Link href="/webinar/register">
+            <a className="group relative inline-flex items-center justify-center overflow-hidden rounded-full p-4 py-1.5 pl-5 pr-8 font-medium text-indigo-600 shadow-xl transition duration-300 ease-out hover:ring-1 hover:ring-primary-500">
+              <span className="absolute inset-0 h-full w-full bg-gradient-to-br from-blue-600 via-primary-600 to-pink-700"></span>
+              <span className="ease absolute bottom-0 right-0 mb-32 mr-4 block h-64 w-64 origin-bottom-left translate-x-24 rotate-45 transform rounded-full bg-pink-500 opacity-30 transition duration-500 group-hover:rotate-90"></span>
+              <span className="relative text-white">Registrasi Webinar</span>
+            </a>
+          </Link>
+        </nav>
         <header className="relative flex flex-col px-4 py-60 text-center sm:px-40 sm:text-left">
-          {/* <Cube className="absolute top-[210px] right-[280px] w-20 rotate-12"></Cube>
-          <Cube className="absolute top-[280px] right-[300px] w-40 rotate-45"></Cube>
-          <Cube className="absolute top-[400px] right-[220px] w-32"></Cube>
-          <Cube className="absolute top-[520px] right-[340px] w-10 rotate-90"></Cube> */}
+          <Cube className="absolute right-12 top-28 w-10 rotate-12 sm:right-[280px] sm:top-[210px] sm:w-20"></Cube>
+          <Cube className="absolute left-12 top-36 w-14 rotate-45 sm:left-auto sm:right-[300px] sm:top-[280px] sm:w-40"></Cube>
+          <Cube className="absolute right-20 bottom-32 w-20 sm:bottom-auto sm:right-[220px] sm:top-[400px] sm:w-32"></Cube>
+          <Cube className="absolute left-14 bottom-20 w-12 rotate-90 sm:bottom-auto sm:left-auto sm:right-[340px] sm:top-[520px] sm:w-10"></Cube>
 
           <h1 className="mt-10 text-5xl font-semibold sm:text-6xl">
             <span className="bg-gradient-to-br from-blue-600 via-primary-600 to-pink-700 bg-clip-text text-transparent">
@@ -90,13 +132,13 @@ export default function Home() {
       <main
         id="content"
         ref={content}
-        className="min-h-screen space-y-20 py-20 px-4 sm:space-y-60 sm:p-40">
+        className="min-h-screen space-y-40 py-20 px-4 sm:space-y-60 sm:p-40">
         {/* --------------------------------- Tentang --------------------------------- */}
         <section
           id="about"
           className="relative grid grid-cols-1 text-center sm:grid-cols-2 sm:text-left">
-          {/* <Cube className="absolute top-[210px] left-[0px] w-20 rotate-12"></Cube>
-          <Cube className="absolute top-[280px] left-[50px] w-40 rotate-45"></Cube> */}
+          <Cube className="absolute top-20 left-5 w-12 rotate-12 sm:left-[0px] sm:top-[210px] sm:w-20"></Cube>
+          <Cube className="absolute top-24 right-4 w-20 rotate-45 sm:right-auto sm:left-[50px] sm:top-[280px] sm:w-40"></Cube>
           <div className="flex items-center justify-center">
             <div className="relative h-40 w-40 sm:h-80 sm:w-80">
               <Image src="/technofest.png" alt="" layout="fill" objectFit="cover" />
@@ -106,7 +148,7 @@ export default function Home() {
             <h2 className="inline bg-gradient-to-br from-blue-600 via-primary-600 to-pink-700 bg-clip-text font-medium tracking-[10px] text-transparent">
               TENTANG
             </h2>
-            <p className="px-10 text-3xl sm:text-4xl">
+            <p className="px-10 text-3xl sm:px-0 sm:text-4xl">
               <span className="font-semibold text-gray-700">Selamat datang</span> di Technofest 2022
             </p>
             <p className="mt-5 text-gray-500">
@@ -122,14 +164,14 @@ export default function Home() {
 
         {/* --------------------------------- Webinar --------------------------------- */}
         <section id="webinar" className="relative flex flex-col items-center">
-          {/* <Cube className="absolute top-[20px] right-[0px] w-24 rotate-90"></Cube>
-          <Cube className="rotate absolute top-[130px] right-[20px] w-10"></Cube>
-          <Cube className="absolute top-[180px] right-[80px] w-32 rotate-12"></Cube> */}
+          <Cube className="absolute left-2 top-0 w-16 rotate-90 sm:left-auto sm:right-[0px] sm:top-[20px] sm:w-24"></Cube>
+          <Cube className="rotate absolute top-16 right-6 w-8 sm:right-[20px] sm:top-[130px] sm:w-10"></Cube>
+          <Cube className="absolute right-10 top-2 w-12 rotate-12 sm:right-[80px] sm:top-[180px] sm:w-32"></Cube>
           <div className="max-w-xl text-center">
             <h2 className="inline bg-gradient-to-br from-blue-600 via-primary-600 to-pink-700 bg-clip-text font-medium tracking-[10px] text-transparent">
               WEBINAR
             </h2>
-            <p className="px-10 text-3xl sm:text-4xl">
+            <p className="px-10 text-3xl sm:px-0 sm:text-4xl">
               <span className="font-semibold text-gray-700">Webinar</span> are Coming Soon
             </p>
             <p className="mt-5 text-gray-500">
@@ -148,14 +190,14 @@ export default function Home() {
 
         {/* --------------------------------- Perlombaan --------------------------------- */}
         <section id="competition" className="relative flex flex-col items-center">
-          {/* <Cube className="absolute top-[10px] left-[0px] w-32"></Cube>
-          <Cube className="absolute top-[350px] left-[40px] w-20 rotate-12"></Cube>
-          <Cube className="absolute top-[280px] right-[60px] w-16 rotate-1"></Cube> */}
+          <Cube className="absolute top-40 left-10 w-20 sm:left-[0px] sm:top-[10px] sm:w-32"></Cube>
+          <Cube className="absolute top-96 right-20 w-24 rotate-12 sm:right-auto sm:left-[40px] sm:top-[350px] sm:w-20"></Cube>
+          <Cube className="absolute bottom-40 left-20 w-16 rotate-1 sm:bottom-auto sm:left-auto sm:right-[60px] sm:top-[280px] sm:w-16"></Cube>
           <div className="max-w-xl text-center">
             <h2 className="inline bg-gradient-to-br from-blue-600 via-primary-600 to-pink-700 bg-clip-text font-medium tracking-[10px] text-transparent">
               PERLOMBAAN
             </h2>
-            <p className="px-10 text-3xl sm:text-4xl">
+            <p className="px-10 text-3xl sm:px-0 sm:text-4xl">
               <span className="font-semibold text-gray-700">Perlombaan</span> pada Tahun Ini
             </p>
           </div>
