@@ -1,10 +1,34 @@
-import { NextPage } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
-const RegisterWebinar: NextPage = () => {
+export default function RegisterWebinar() {
   const [modalOpened, setModalOpened] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+
+  function closeModal() {
+    setModalOpened(false);
+  }
+
+  useEffect(() => {
+    const url =
+      'https://script.google.com/macros/s/AKfycbzoPyVaimXHgLPb8lneYODUSga5nwNFDXEpB7WP1SQQZ-3k8sV8aMdXCoyfe-fisK3w6g/exec';
+    const form = document.forms[0];
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      setIsLoading(true);
+      fetch(url, { method: 'POST', body: new FormData(form) })
+        .then(() => {
+          setIsLoading(false);
+          setModalOpened(true);
+        })
+        .catch((error) => {
+          setIsLoading(false);
+          console.error('Error!', error.message);
+        });
+    });
+  }, []);
 
   return (
     <div className="h-screen bg-black text-primary-50">
@@ -48,10 +72,7 @@ const RegisterWebinar: NextPage = () => {
       </nav>
       <main className="mt-20 flex w-full flex-col items-center">
         <h1 className="mt-10 text-4xl font-semibold">Registrasi Webinar</h1>
-        <form
-          method="POST"
-          action="https://script.google.com/macros/s/AKfycbzoPyVaimXHgLPb8lneYODUSga5nwNFDXEpB7WP1SQQZ-3k8sV8aMdXCoyfe-fisK3w6g/exec"
-          className="mt-10 flex flex-col">
+        <form method="POST" className="mt-10 flex flex-col">
           <div className="mt-4 flex flex-col space-y-1 text-gray-200">
             <label htmlFor="">Nama</label>
             <input
@@ -99,7 +120,7 @@ const RegisterWebinar: NextPage = () => {
               <span className="ease absolute bottom-0 right-0 mb-32 mr-4 block h-64 w-64 origin-bottom-left translate-x-24 rotate-45 transform rounded-full bg-pink-500 opacity-30 transition duration-500 group-hover:rotate-90"></span>
               <span className="relative text-white">Registrasi</span>
             </button>
-            <div className="absolute inset-y-0 right-0 my-auto">
+            <div className={`absolute inset-y-0 right-0 my-auto ${isLoading ? 'block' : 'hidden'}`}>
               <div className="relative">
                 <div className="h-8 w-8 rounded-full border-2 border-black"></div>
                 <div className="absolute left-0 top-0 h-8 w-8 animate-spin rounded-full border-t-2 border-primary-600"></div>
@@ -109,8 +130,11 @@ const RegisterWebinar: NextPage = () => {
         </form>
       </main>
       {/* Modal */}
-      <div className="absolute inset-0 flex items-center justify-center bg-black/50 ">
-        <div className="relative flex w-[500px] flex-col rounded-xl bg-white/90 py-12 px-10 text-gray-700 backdrop-blur">
+      <div
+        className={`absolute inset-0 flex items-center justify-center bg-black/50 ${
+          modalOpened ? 'block' : 'hidden'
+        }`}>
+        <div className="relative flex w-[500px] flex-col rounded-xl bg-white/90 py-10 px-8 text-gray-700 backdrop-blur">
           <p className="inline-block  bg-gradient-to-br from-blue-600 via-primary-600 to-pink-700 bg-clip-text text-xl font-semibold text-transparent">
             Registrasi Webinar berhasil.
           </p>
@@ -120,17 +144,17 @@ const RegisterWebinar: NextPage = () => {
               https://blabla.com
             </a>
           </p>
-          <div>
-            <button className="group relative mt-5 inline-flex items-center justify-center overflow-hidden rounded-full p-4 px-5 py-1.5 font-medium text-indigo-600 shadow-xl transition duration-300 ease-out hover:ring-1 hover:ring-primary-500">
+          <div className="mt-10 flex justify-center">
+            <button
+              onClick={closeModal}
+              className="group relative inline-flex items-center justify-center overflow-hidden rounded-full p-4 px-5 py-1.5 font-medium text-indigo-600 shadow-xl transition duration-300 ease-out hover:ring-1 hover:ring-primary-500">
               <span className="absolute inset-0 h-full w-full bg-gradient-to-br from-blue-600 via-primary-600 to-pink-700"></span>
               <span className="ease absolute bottom-0 right-0 mb-32 mr-4 block h-64 w-64 origin-bottom-left translate-x-24 rotate-45 transform rounded-full bg-pink-500 opacity-30 transition duration-500 group-hover:rotate-90"></span>
-              <span className="relative text-white">Registrasi Webinar</span>
+              <span className="relative text-white">Selesai</span>
             </button>
           </div>
         </div>
       </div>
     </div>
   );
-};
-
-export default RegisterWebinar;
+}

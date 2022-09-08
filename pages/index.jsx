@@ -1,15 +1,15 @@
-import type { NextPage } from 'next';
 import Image from 'next/image';
-import { Fragment, useEffect, useState } from 'react';
-import Cube from '@/assets/svg/cube.svg';
-import Comp from '@/assets/svg/comp-llc3.svg';
-import Essay from '@/assets/svg/essay-llc3.svg';
-import Poster from '@/assets/svg/poster-llc3.svg';
-import Uiux from '@/assets/svg/uiux-llc3.svg';
+import { Fragment, useEffect, useRef, useState } from 'react';
+import Cube from '../assets/svg/cube.svg';
+import Comp from '../assets/svg/comp-llc3.svg';
+import Essay from '../assets/svg/essay-llc3.svg';
+import Poster from '../assets/svg/poster-llc3.svg';
+import Uiux from '../assets/svg/uiux-llc3.svg';
 import Link from 'next/link';
 
-const Home: NextPage = () => {
+export default function Home() {
   const [showNavbar, setShowNavbar] = useState(false);
+  const content = useRef();
 
   useEffect(() => {
     window.onscroll = function () {
@@ -17,7 +17,7 @@ const Home: NextPage = () => {
     };
 
     function scrollFunction() {
-      if (document.getElementById('content')?.offsetTop <= window.pageYOffset) {
+      if (content.current?.offsetTop <= window.pageYOffset) {
         setShowNavbar(true);
       } else {
         setShowNavbar(false);
@@ -87,7 +87,7 @@ const Home: NextPage = () => {
         </header>
       </div>
 
-      <main id="content" className="min-h-screen space-y-60 p-40">
+      <main id="content" ref={content} className="min-h-screen space-y-60 p-40">
         {/* --------------------------------- Tentang --------------------------------- */}
         <section id="about" className="relative grid grid-cols-2">
           <Cube className="absolute top-[210px] left-[0px] w-20 rotate-12"></Cube>
@@ -184,7 +184,5 @@ const Home: NextPage = () => {
         </p>
       </footer>
     </Fragment>
-  );
-};
-
-export default Home;
+  )
+}
