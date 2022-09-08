@@ -6,6 +6,7 @@ import Essay from '../assets/svg/essay-llc3.svg';
 import Poster from '../assets/svg/poster-llc3.svg';
 import Uiux from '../assets/svg/uiux-llc3.svg';
 import Link from 'next/link';
+import Head from 'next/head';
 
 export default function Home() {
   const [showNavbar, setShowNavbar] = useState(false);
@@ -33,6 +34,14 @@ export default function Home() {
 
   return (
     <Fragment>
+      <Head>
+        <title>Technofest 2022</title>
+        <meta
+          name="description"
+          content="Festival tahunan yang diadakan oleh Himpunan Mahasiswa Sistem Komputer Universitas Sriwijaya."
+        />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <div className="h-screen bg-black text-primary-50">
         <nav
           className={`flex items-center justify-between py-4 px-4 sm:px-72 ${
