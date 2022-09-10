@@ -21,7 +21,10 @@ module.exports = {
         },
       },
       fontFamily: {
-        poppins: ['Poppins', 'sans-serif']
+        poppins: ['Poppins', 'sans-serif'],
+        'aldo-the-apache': ['Aldo The Apache', 'sans-serif'],
+        'metal-storm': ['Metal Storm', 'sans-serif'],
+        'robot': ['Robot Font', 'sans-serif']
       }
     },
   },

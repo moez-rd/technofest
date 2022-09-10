@@ -6,7 +6,7 @@ export default function Footer() {
       <div className="relative h-10 w-10">
         <Image src="/technofest.png" alt="" layout="fill" objectFit="cover" />
       </div>
-      <p className="mt-1 font-medium">Technology Festival</p>
+      <p className="mt-1 font-metal-storm font-medium lowercase">Technology Festival</p>
       <p className="mt-3 text-xs text-gray-500">
         &copy; Copyright 2022 All Rights Reserved by Infokom Himasisko
       </p>

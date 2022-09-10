@@ -31,7 +31,7 @@ export default function Navbar({ content }) {
   return (
     <Fragment>
       <nav
-        className={`flex items-center justify-between py-4 px-4 sm:px-10 md:px-20 xl:px-20 2xl:px-72 ${
+        className={`absolute top-0 z-10 flex w-full items-center justify-between py-4 px-4 sm:px-10 md:px-20 xl:px-20 2xl:px-72 ${
           showNavbar ? 'fixed z-50 w-full bg-black' : ''
         }`}>
         <div>
@@ -40,7 +40,7 @@ export default function Navbar({ content }) {
               <div className="relative h-8 w-8">
                 <Image src="/technofest.png" alt="" layout="fill" objectFit="cover" />
               </div>
-              <p className="translate-y-0.5 font-semibold sm:text-red-400 md:text-yellow-400 lg:text-green-400 xl:text-blue-400 2xl:text-purple-400">
+              <p className="translate-y-0.5 font-metal-storm font-semibold lowercase sm:text-red-400 md:text-yellow-400 lg:text-green-400 xl:text-blue-400 2xl:text-purple-400">
                 Technofest
               </p>
             </a>

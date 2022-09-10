@@ -52,10 +52,10 @@ export default function RegisterWebinar() {
       </Head>
       <div className="flex min-h-screen flex-col justify-between bg-black text-primary-50">
         <Navbar />
-        <main className="my-20 flex w-full flex-col items-center">
+        <main className="my-20 flex flex-col items-center px-4">
           <h1 className="mt-10 text-3xl font-semibold sm:text-4xl">Registrasi Webinar</h1>
-          <form>
-            <div className="mt-10 w-[500px]">
+          <form className="w-full sm:w-[500px]">
+            <div className="mt-10 ">
               <Input
                 type="text"
                 name="Nama"

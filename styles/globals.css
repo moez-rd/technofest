@@ -4,6 +4,8 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
+@import url('../assets/fonts/index.css');
+
 html {
   @apply scroll-smooth;
 }

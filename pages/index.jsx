@@ -27,19 +27,19 @@ export default function Home() {
         <Navbar content={content} />
 
         {/* --------------------------------- Header --------------------------------- */}
-        <header className="relative flex flex-col py-40 px-20 text-center md:text-left xl:px-20 2xl:py-60 2xl:px-40">
+        <header className="relative flex h-full flex-col justify-center py-40 px-4 text-center md:text-left xl:px-20 2xl:py-60 2xl:px-40">
           <Cube className="absolute right-12 top-28 w-10 rotate-12 md:right-[280px] md:top-[210px] md:w-20"></Cube>
           <Cube className="absolute left-12 top-36 w-14 rotate-45 md:left-auto md:right-[300px] md:top-[280px] md:w-40"></Cube>
-          <Cube className="absolute right-20 bottom-32 w-20 md:bottom-auto md:right-[220px] md:top-[400px] md:w-32"></Cube>
-          <Cube className="absolute left-14 bottom-20 w-12 rotate-90 md:bottom-auto md:left-auto md:right-[340px] md:top-[520px] md:w-10"></Cube>
+          <Cube className="absolute right-20 bottom-40 w-20 md:bottom-auto md:right-[220px] md:top-[400px] md:w-32"></Cube>
+          <Cube className="absolute left-14 bottom-32 w-12 rotate-90 md:bottom-auto md:left-auto md:right-[340px] md:top-[520px] md:w-10"></Cube>
 
-          <h1 className="mt-10 text-5xl font-semibold 2xl:text-6xl">
-            <span className="bg-gradient-to-br from-blue-600 via-primary-600 to-pink-700 bg-clip-text text-transparent">
+          <h1 className="font-metal-storm text-4xl font-semibold lowercase 2xl:text-6xl">
+            <span className="bg-gradient-to-br from-blue-600 via-primary-600 to-pink-700 bg-clip-text  text-transparent">
               Technology
             </span>{' '}
             Festival
           </h1>
-          <p className="mt-2 max-w-xl font-light sm:mt-4 sm:text-lg md:text-2xl">
+          <p className="mt-2 max-w-xl text-sm font-light sm:mt-4 sm:text-lg md:text-2xl">
             Himpunan Mahasiswa Sistem Komputer Universitas Sriwijaya
           </p>
         </header>
@@ -53,8 +53,8 @@ export default function Home() {
         <section
           id="about"
           className="relative grid grid-cols-1 text-center md:grid-cols-2 md:text-left">
-          <Cube className="absolute top-20 left-5 -z-10 w-12 rotate-12 md:left-[0px] md:top-[210px] md:w-20"></Cube>
-          <Cube className="absolute top-24 right-4 -z-10 w-20 rotate-45 md:right-auto md:left-[50px] md:top-[280px] md:w-40"></Cube>
+          <Cube className="absolute top-20 left-5 -z-10 w-10 rotate-12 md:left-[0px] md:top-[210px] md:w-20"></Cube>
+          <Cube className="absolute top-24 right-4 -z-10 w-8 rotate-45 md:right-auto md:left-[50px] md:top-[280px] md:w-40"></Cube>
           <div className="flex items-center justify-center">
             <div className="relative h-40 w-40 xl:h-56 xl:w-56 2xl:h-80 2xl:w-80">
               <Image src="/technofest.png" alt="" layout="fill" objectFit="cover" />
@@ -80,9 +80,9 @@ export default function Home() {
 
         {/* --------------------------------- Webinar --------------------------------- */}
         <section id="webinar" className="relative flex flex-col items-center">
-          <Cube className="absolute left-2 top-0 -z-10 w-16 rotate-90 md:left-auto md:right-[0px] md:top-[20px] md:w-24"></Cube>
+          <Cube className="absolute left-2 top-0 -z-10 w-12 rotate-90 md:left-auto md:right-[0px] md:top-[20px] md:w-24"></Cube>
           <Cube className="rotate absolute top-16 right-6 -z-10 w-8 md:right-[20px] md:top-[130px] md:w-10"></Cube>
-          <Cube className="absolute right-10 top-2 -z-10 w-12 rotate-12 md:right-[80px] md:top-[180px] md:w-32"></Cube>
+          <Cube className="absolute right-10 top-2 -z-10 w-6 rotate-12 md:right-[80px] md:top-[180px] md:w-32"></Cube>
           <div className="max-w-xl text-center">
             <h2 className="inline bg-gradient-to-br from-blue-600 via-primary-600 to-pink-700 bg-clip-text font-medium tracking-[10px] text-transparent">
               WEBINAR
@@ -106,9 +106,9 @@ export default function Home() {
 
         {/* --------------------------------- Perlombaan --------------------------------- */}
         <section id="competition" className="relative flex flex-col items-center">
-          <Cube className="absolute top-40 left-10 w-20 md:left-[0px] md:top-[10px] md:w-32"></Cube>
-          <Cube className="absolute top-96 right-20 w-24 rotate-12 md:right-auto md:left-[40px] md:top-[350px] md:w-20"></Cube>
-          <Cube className="absolute bottom-40 left-20 w-16 rotate-1 md:bottom-auto md:left-auto md:right-[60px] md:top-[280px] md:w-16"></Cube>
+          <Cube className="absolute top-40 left-10 w-16 md:left-[0px] md:top-[10px] md:w-32"></Cube>
+          <Cube className="absolute top-96 right-20 w-12 rotate-12 md:right-auto md:left-[40px] md:top-[350px] md:w-20"></Cube>
+          <Cube className="absolute bottom-40 left-20 w-10 rotate-1 md:bottom-auto md:left-auto md:right-[60px] md:top-[280px] md:w-16"></Cube>
           <div className="max-w-xl text-center">
             <h2 className="inline bg-gradient-to-br from-blue-600 via-primary-600 to-pink-700 bg-clip-text font-medium tracking-[10px] text-transparent">
               PERLOMBAAN
@@ -118,19 +118,19 @@ export default function Home() {
             </p>
           </div>
           <div className="z-10 mt-10 grid grid-cols-1 gap-y-10 text-center sm:grid-cols-2 sm:gap-x-10 md:grid-cols-4 md:gap-y-0">
-            <div className="flex flex-col items-center rounded-xl px-2 py-5 shadow-xl backdrop-blur transition duration-300 hover:scale-105">
+            <div className="flex flex-col items-center rounded-xl p-5 shadow-xl backdrop-blur transition duration-300 hover:scale-105">
               <Uiux className="w-24"></Uiux>
               <h3 className="mt-5 text-2xl font-medium">UI/UX Design</h3>
             </div>
-            <div className="flex flex-col items-center rounded-xl px-2 py-5 shadow-xl backdrop-blur transition duration-300 hover:scale-105">
+            <div className="flex flex-col items-center rounded-xl p-5 shadow-xl backdrop-blur transition duration-300 hover:scale-105">
               <Poster className="w-24"></Poster>
               <h3 className="mt-5 text-2xl font-medium">Poster Design</h3>
             </div>
-            <div className="flex flex-col items-center rounded-xl px-2 py-5 shadow-xl backdrop-blur transition duration-300 hover:scale-105">
+            <div className="flex flex-col items-center rounded-xl p-5 shadow-xl backdrop-blur transition duration-300 hover:scale-105">
               <Comp className="w-24"></Comp>
               <h3 className="mt-5 text-2xl font-medium">Competitive Programming</h3>
             </div>
-            <div className="flex flex-col items-center rounded-xl px-2 py-5 shadow-xl backdrop-blur transition duration-300 hover:scale-105">
+            <div className="flex flex-col items-center rounded-xl p-5 shadow-xl backdrop-blur transition duration-300 hover:scale-105">
               <Essay className="w-24"></Essay>
               <h3 className="mt-5 text-2xl font-medium">Writing Essay</h3>
             </div>
