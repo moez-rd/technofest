@@ -31,8 +31,8 @@ export default function Navbar({ content }) {
   return (
     <Fragment>
       <nav
-        className={`absolute top-0 z-10 flex w-full items-center justify-between py-4 px-4 sm:px-10 md:px-20 xl:px-20 2xl:px-72 ${
-          showNavbar ? 'fixed z-50 w-full bg-black' : ''
+        className={`z-10 flex w-full items-center justify-between py-4 px-4 sm:px-10 md:px-20 xl:px-20 2xl:px-72 ${
+          showNavbar ? 'fixed z-50 w-full bg-black' : 'absolute top-0'
         }`}>
         <div>
           <Link href="/">
