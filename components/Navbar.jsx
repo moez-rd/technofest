@@ -31,7 +31,7 @@ export default function Navbar({ content }) {
   return (
     <Fragment>
       <nav
-        className={`z-10 flex w-full items-center justify-between py-4 px-4 sm:px-10 md:px-20 xl:px-20 2xl:px-72 ${
+        className={`z-10 flex w-full items-center justify-between py-4 px-4 sm:px-10 lg:px-20 xl:px-20 2xl:px-72 ${
           showNavbar ? 'fixed z-50 w-full bg-black' : 'absolute top-0'
         }`}>
         <div>
@@ -46,14 +46,14 @@ export default function Navbar({ content }) {
             </a>
           </Link>
         </div>
-        <div className="lg:hidden">
+        <div className="md:hidden">
           <button onClick={() => setShowMobileNavbar(!showMobileNavbar)}>
             <span className="mx-0.5 inline-block h-3 w-3 rounded-full bg-primary-500"></span>
             <span className="mx-0.5 inline-block h-3 w-3 rounded-full bg-pink-500"></span>
             <span className="mx-0.5 inline-block h-3 w-3 rounded-full bg-blue-500"></span>
           </button>
         </div>
-        <div className="hidden space-x-2 lg:block">
+        <div className="hidden space-x-2 md:block">
           <Link href="/#about">
             <a className="group relative inline-flex items-center justify-center overflow-hidden rounded-full p-0.5 font-medium">
               <span className="absolute h-full w-full bg-gradient-to-br group-hover:from-pink-700 group-hover:via-primary-600 group-hover:to-blue-600"></span>

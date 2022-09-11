@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'Aldo The Apache';
-  src: url('aldo-the-apache.ttf') format('ttf');
+  src: url('aldo-the-apache.woff') format('woff');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -8,7 +8,7 @@
 
 @font-face {
   font-family: 'Metal Storm';
-  src: url('metal-storm-bold.ttf') format('ttf');
+  src: url('metal-storm-bold.woff') format('woff');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -16,7 +16,7 @@
 
 @font-face {
   font-family: 'Robot Font';
-  src: url('robot-font.otf') format('otf');
+  src: url('robot-font.woff') format('woff');
   font-weight: normal;
   font-style: normal;
   font-display: swap;

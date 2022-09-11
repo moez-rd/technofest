@@ -52,8 +52,11 @@ export default function RegisterWebinar() {
       </Head>
       <div className="flex min-h-screen flex-col justify-between bg-black text-primary-50">
         <Navbar />
-        <main className="my-20 flex flex-col items-center px-4">
+        <main className="flex grow flex-col items-center justify-center py-40 px-4">
           <h1 className="mt-10 text-3xl font-semibold sm:text-4xl">Registrasi Webinar</h1>
+          <p className="mt-1 text-center text-gray-500">
+            Silakan lengkapi formulir pendaftaran di bawah.
+          </p>
           <form className="w-full sm:w-[500px]">
             <div className="mt-10 ">
               <Input
