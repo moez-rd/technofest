@@ -29,7 +29,7 @@ export default function Home() {
         {/* --------------------------------- Header --------------------------------- */}
         <header className="flex h-full flex-col-reverse items-center justify-around py-40 px-4 text-center lg:flex-row lg:justify-between lg:px-14 lg:text-left xl:px-20 2xl:py-60 2xl:px-40">
           <div className="z-10">
-            <h1 className=" font-metal-storm text-4xl font-semibold lowercase 2xl:text-6xl">
+            <h1 className=" font-metal-storm text-4xl lowercase xl:font-semibold 2xl:text-6xl">
               <span className="bg-gradient-to-br from-blue-600 via-primary-600 to-pink-700 bg-clip-text  text-transparent">
                 Technology
               </span>{' '}

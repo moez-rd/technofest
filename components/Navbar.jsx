@@ -40,9 +40,7 @@ export default function Navbar({ content }) {
               <div className="relative h-8 w-8">
                 <Image src="/technofest.png" alt="" layout="fill" objectFit="cover" />
               </div>
-              <p className="translate-y-0.5 font-metal-storm font-semibold lowercase sm:text-red-400 md:text-yellow-400 lg:text-green-400 xl:text-blue-400 2xl:text-purple-400">
-                Technofest
-              </p>
+              <p className="translate-y-0.5 font-metal-storm lowercase">Technofest</p>
             </a>
           </Link>
         </div>
