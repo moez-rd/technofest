@@ -29,7 +29,7 @@ export default function Home() {
 
         {/* --------------------------------- Header --------------------------------- */}
 
-        <header className="flex flex-col items-center justify-center pb-[100px] pt-[400px] text-center">
+        <header className="flex flex-col items-center justify-center pb-[100px] pt-[40vh] text-center">
           <div className="relative w-56 sm:w-72 md:w-80">
             <Cube className="absolute bottom-12 left-0 w-4 rotate-12 sm:w-6 md:w-8"></Cube>
             <Cube className="absolute bottom-10 left-9 w-20 rotate-45 sm:w-32 md:w-40"></Cube>
