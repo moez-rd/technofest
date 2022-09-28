@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react';
 
-export default function Modal({ opened, title, children }) {
+export default function Modal({ opened, title, children, onClosed }) {
   const [modalOpened, setModalOpened] = useState(opened);
   function closeModal() {
     setModalOpened(false);
+    onClosed();
   }
 
   useEffect(() => {

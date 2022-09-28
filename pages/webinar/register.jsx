@@ -68,7 +68,7 @@ export default function RegisterWebinar() {
                 label="Nama"
               />
               <Input
-                type="text"
+                type="email"
                 name="Email"
                 placeholder="Email"
                 value={email}
@@ -116,14 +116,20 @@ export default function RegisterWebinar() {
         <Footer></Footer>
       </div>
       {/* Successed Modal */}
-      <Modal title="Registrasi Webinar berhasil." opened={successedModalOpened}>
+      <Modal
+        title="Registrasi Webinar berhasil."
+        opened={successedModalOpened}
+        onClosed={() => setSuccessedModalOpened(false)}>
         Silakan bergabung ke grup Whatsapp melalui link berikut.{' '}
         <a href="https://blabla.com" className="text-gray-500 hover:underline">
           https://blabla.com
         </a>
       </Modal>
       {/* Failed Modal */}
-      <Modal title="Registrasi Webinar gagal." opened={!failedModalOpened}>
+      <Modal
+        title="Registrasi Webinar gagal."
+        opened={failedModalOpened}
+        onClosed={() => setFailedModalOpened(false)}>
         <span className="text-red-500">Terjadi kesalahan saat pendaftaran webinar.</span>
       </Modal>
     </Fragment>
