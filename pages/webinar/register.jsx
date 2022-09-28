@@ -123,8 +123,8 @@ export default function RegisterWebinar() {
         </a>
       </Modal>
       {/* Failed Modal */}
-      <Modal title="Registrasi Webinar gagal." opened={failedModalOpened}>
-        Terjadi kesalahan saat pendaftaran webinar.
+      <Modal title="Registrasi Webinar gagal." opened={!failedModalOpened}>
+        <span className="text-red-500">Terjadi kesalahan saat pendaftaran webinar.</span>
       </Modal>
     </Fragment>
   );
