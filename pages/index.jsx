@@ -67,7 +67,7 @@ export default function Home() {
           <Cube className="absolute top-20 left-5 -z-10 w-10 rotate-12 lg:left-[0px] lg:top-[210px] lg:w-14 2xl:w-20"></Cube>
           <Cube className="absolute top-24 right-4 -z-10 w-8 rotate-45 lg:right-auto lg:left-[50px] lg:top-[280px] lg:w-12 2xl:w-16"></Cube>
           <div className="flex items-center justify-center">
-            <div className="relative h-40 w-40 lg:h-48 lg:w-48 xl:h-56 xl:w-56 2xl:h-80 2xl:w-80">
+            <div className="relative h-40 w-40 lg:h-48 lg:w-48 xl:h-56 xl:w-56">
               <Image src="/technofest.png" alt="" layout="fill" objectFit="cover" />
             </div>
           </div>
@@ -116,7 +116,7 @@ export default function Home() {
         </section>
 
         {/* --------------------------------- Perlombaan --------------------------------- */}
-        <section id="competition" className="relative flex flex-col items-center">
+        <section id="competition" className="relative flex flex-col sm:items-center">
           <Cube className="absolute top-40 left-10 w-16 md:left-[0px] md:top-[10px] md:w-20"></Cube>
           <Cube className="absolute top-96 right-20 w-12 rotate-12 md:right-auto md:left-[40px] md:top-[350px] md:w-16"></Cube>
           <Cube className="absolute bottom-40 left-20 w-10 rotate-1 md:bottom-auto md:left-auto md:right-[60px] md:top-[280px] md:w-14"></Cube>

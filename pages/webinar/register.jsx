@@ -17,7 +17,7 @@ export default function RegisterWebinar() {
 
   useEffect(() => {
     const url =
-      'https://script.google.com/macros/s/AKfycbzoPyVaimXHgLPb8lneYODUSga5nwNFDXEpB7WP1SQQZ-3k8sV8aMdXCoyfe-fisK3w6g/exec';
+      'https://script.google.com/macros/s/AKfycbwpfej7wlFeUu-trT7jqxVr3Ob8srquG8sZVU8n-lK_lkx1k7cwt80KZpCQeGq9CLde/exec';
     const form = document.forms[0];
 
     form.addEventListener('submit', (e) => {
@@ -105,7 +105,7 @@ export default function RegisterWebinar() {
                     isLoading ? 'block' : 'hidden'
                   }`}>
                   <div className="relative">
-                    <div className="h-8 w-8 rounded-full border-2 border-black"></div>
+                    <div className="h-8 w-8 rounded-full border-2 border-gray-300"></div>
                     <div className="absolute left-0 top-0 h-8 w-8 animate-spin rounded-full border-t-2 border-primary-600"></div>
                   </div>
                 </div>
