@@ -65,7 +65,7 @@ export default function Home() {
       <main
         id="content"
         ref={content}
-        className="mt-24 min-h-screen space-y-40 py-20 px-4 sm:mt-60 md:px-10 lg:space-y-60 lg:px-12 lg:py-40 xl:px-60">
+        className="mt-24 min-h-screen space-y-40 overflow-x-hidden py-20 px-4 sm:mt-60 md:px-10 lg:space-y-60 lg:px-12 lg:py-40 xl:px-60">
         {/* --------------------------------- Tentang --------------------------------- */}
         <section
           id="about"
