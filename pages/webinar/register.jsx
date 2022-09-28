@@ -114,18 +114,18 @@ export default function RegisterWebinar() {
           </form>
         </main>
         <Footer></Footer>
-        {/* Successed Modal */}
-        <Modal title="Registrasi Webinar berhasil." opened={successedModalOpened}>
-          Silakan bergabung ke grup Whatsapp melalui link berikut.{' '}
-          <a href="https://blabla.com" className="text-gray-500 hover:underline">
-            https://blabla.com
-          </a>
-        </Modal>
-        {/* Failed Modal */}
-        <Modal title="Registrasi Webinar gagal." opened={failedModalOpened}>
-          Terjadi kesalahan saat pendaftaran webinar.
-        </Modal>
       </div>
+      {/* Successed Modal */}
+      <Modal title="Registrasi Webinar berhasil." opened={successedModalOpened}>
+        Silakan bergabung ke grup Whatsapp melalui link berikut.{' '}
+        <a href="https://blabla.com" className="text-gray-500 hover:underline">
+          https://blabla.com
+        </a>
+      </Modal>
+      {/* Failed Modal */}
+      <Modal title="Registrasi Webinar gagal." opened={failedModalOpened}>
+        Terjadi kesalahan saat pendaftaran webinar.
+      </Modal>
     </Fragment>
   );
 }

@@ -12,10 +12,10 @@ export default function Modal({ opened, title, children }) {
 
   return (
     <div
-      className={`absolute inset-0 flex items-center justify-center bg-black/50 ${
+      className={`fixed inset-0 z-50 flex items-center justify-center bg-black/50 ${
         modalOpened ? 'block' : 'hidden'
       }`}>
-      <div className="relative mx-10 flex flex-col rounded-xl bg-white/90 py-10 px-8 text-gray-700 backdrop-blur sm:w-[500px]">
+      <div className="flex flex-col rounded-xl bg-white/90 py-10 px-8 text-gray-700 backdrop-blur sm:w-[500px]">
         <p className="inline-block  bg-gradient-to-br from-blue-600 via-primary-600 to-pink-700 bg-clip-text text-xl font-semibold text-transparent">
           {title}
         </p>
