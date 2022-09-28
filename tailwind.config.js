@@ -24,7 +24,8 @@ module.exports = {
         poppins: ['Poppins', 'sans-serif'],
         'aldo-the-apache': ['Aldo The Apache', 'sans-serif'],
         'metal-storm': ['Metal Storm', 'sans-serif'],
-        'robot': ['Robot Font', 'sans-serif']
+        'robot': ['Robot Font', 'sans-serif'],
+        'gemunu-libre': ['Gemunu Libre', 'sans-serif']
       }
     },
   },

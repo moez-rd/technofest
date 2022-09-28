@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import { Fragment, useEffect, useRef, useState } from 'react';
 import Cube from '../assets/svg/cube.svg';
+import Separator from '../assets/svg/separator.svg';
 import Comp from '../assets/svg/comp-llc3.svg';
 import Essay from '../assets/svg/essay-llc3.svg';
 import Poster from '../assets/svg/poster-llc3.svg';
@@ -16,42 +17,49 @@ export default function Home() {
   return (
     <Fragment>
       <Head>
-        <title>Technofest 2022</title>
+        <title>Technofest</title>
         <meta
           name="description"
           content="Festival tahunan yang diadakan oleh Himpunan Mahasiswa Sistem Komputer Universitas Sriwijaya."
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className="h-screen bg-black text-primary-50">
+      <div className=" bg-gray-300">
         <Navbar content={content} />
 
         {/* --------------------------------- Header --------------------------------- */}
-        <header className="flex h-full flex-col-reverse items-center justify-around py-40 px-4 text-center lg:flex-row lg:justify-between lg:px-14 lg:text-left xl:px-20 2xl:py-60 2xl:px-40">
-          <div className="z-10">
-            <h1 className=" font-metal-storm text-4xl lowercase xl:font-semibold 2xl:text-6xl">
-              <span className="bg-gradient-to-br from-blue-600 via-primary-600 to-pink-700 bg-clip-text  text-transparent">
-                Technology
-              </span>{' '}
-              Festival
-            </h1>
-            <p className="mt-2 max-w-xl text-sm font-light sm:mt-4 sm:text-lg md:text-2xl">
-              Himpunan Mahasiswa Sistem Komputer Universitas Sriwijaya
-            </p>
+
+        <header className="flex flex-col items-center justify-center pb-[100px] pt-[400px] text-center">
+          <div className="relative w-56 sm:w-72 md:w-80">
+            <Cube className="absolute bottom-12 left-0 w-4 rotate-12 sm:w-6 md:w-8"></Cube>
+            <Cube className="absolute bottom-10 left-9 w-20 rotate-45 sm:w-32 md:w-40"></Cube>
+            <Cube className="absolute bottom-8 right-14 w-10 rotate-90 sm:w-16 md:w-20"></Cube>
+            <Cube className="absolute bottom-12 right-0 w-6 rotate-0 sm:w-8 md:w-12"></Cube>
           </div>
-          <div className="relative">
-            <Cube className="absolute inset-y-0 inset-x-12 top-28 w-10 rotate-12 lg:inset-x-auto lg:right-[180px] lg:-top-[150px] lg:w-14 2xl:-top-[190px] 2xl:w-20"></Cube>
-            <Cube className="absolute inset-y-0 inset-x-0 top-36 w-14 rotate-45 lg:inset-x-auto lg:left-auto lg:right-[200px] lg:-top-[80px] lg:w-16 2xl:-top-[100px] 2xl:w-24"></Cube>
-            <Cube className="absolute inset-y-0 -inset-x-10 top-16 w-20 lg:inset-x-auto lg:right-[120px] lg:-top-[30px] lg:w-24 2xl:w-28"></Cube>
-            <Cube className="absolute inset-y-0 -inset-x-16 top-32 w-12 rotate-90 lg:inset-x-auto lg:left-auto lg:right-[180px] lg:top-[60px] lg:w-14 2xl:top-[70px] 2xl:w-20"></Cube>
+          <h1 className="bg-gradient-to-br from-blue-500 via-primary-500 to-pink-500 bg-clip-text font-metal-storm text-4xl lowercase text-transparent 2xl:text-6xl">
+            Technology Festival
+          </h1>
+          <p className="mt-2 max-w-xl text-sm sm:text-lg md:text-2xl">
+            Himpunan Mahasiswa Sistem Komputer Universitas Sriwijaya
+          </p>
+          <div className="mt-10">
+            <Link href="/#content">
+              <a className="group relative inline-flex items-center justify-center overflow-hidden rounded-full p-0.5 font-medium">
+                <span className="absolute h-full w-full bg-gradient-to-br group-hover:from-pink-700 group-hover:via-primary-600 group-hover:to-blue-600"></span>
+                <span className="relative rounded-full bg-gray-700 px-5 py-1 transition-all duration-300 ease-out group-hover:bg-opacity-0">
+                  <span className="relative text-white">Explore</span>
+                </span>
+              </a>
+            </Link>
           </div>
         </header>
+        <Separator className="absolute -z-50 w-full"></Separator>
       </div>
 
       <main
         id="content"
         ref={content}
-        className="min-h-screen space-y-40 py-20 px-4 md:px-10 lg:space-y-60 lg:px-12 lg:py-40">
+        className="mt-24 min-h-screen space-y-40 py-20 px-4 sm:mt-60 md:px-10 lg:space-y-60 lg:px-12 lg:py-40 xl:px-60">
         {/* --------------------------------- Tentang --------------------------------- */}
         <section
           id="about"
@@ -64,7 +72,7 @@ export default function Home() {
             </div>
           </div>
           <div className="mt-10 md:max-w-lg lg:mt-0">
-            <h2 className="inline bg-gradient-to-br from-blue-600 via-primary-600 to-pink-700 bg-clip-text font-robot font-medium tracking-[10px] text-transparent">
+            <h2 className="inline bg-gradient-to-br from-blue-500 via-primary-500 to-pink-500 bg-clip-text font-robot font-medium tracking-[10px] text-transparent">
               TENTANG
             </h2>
             <p className="px-10 text-3xl text-gray-700 sm:px-0 sm:text-4xl">
@@ -87,11 +95,11 @@ export default function Home() {
           <Cube className="rotate absolute top-16 right-6 -z-10 w-8 md:right-[20px] md:top-[130px] md:w-12 2xl:w-16"></Cube>
           <Cube className="absolute right-10 top-2 -z-10 w-6 rotate-12 md:right-[80px] md:top-[180px] md:w-10 2xl:w-14"></Cube>
           <div className="max-w-xl text-center">
-            <h2 className="inline bg-gradient-to-br from-blue-600 via-primary-600 to-pink-700 bg-clip-text font-robot font-medium tracking-[10px] text-transparent">
+            <h2 className="inline bg-gradient-to-br from-blue-500 via-primary-500 to-pink-500 bg-clip-text font-robot font-medium tracking-[10px] text-transparent">
               WEBINAR
             </h2>
             <p className="px-10 text-3xl text-gray-700 sm:px-0 sm:text-4xl">
-              <span className="font-semibold ">Webinar</span> are Coming Soon
+              <span className="font-semibold">Webinar</span> are Coming Soon
             </p>
             <p className="mt-5 text-gray-500">
               Webinar akan diselenggarakan pada tanggal{' '}
@@ -113,11 +121,11 @@ export default function Home() {
           <Cube className="absolute top-96 right-20 w-12 rotate-12 md:right-auto md:left-[40px] md:top-[350px] md:w-16"></Cube>
           <Cube className="absolute bottom-40 left-20 w-10 rotate-1 md:bottom-auto md:left-auto md:right-[60px] md:top-[280px] md:w-14"></Cube>
           <div className="max-w-xl text-center">
-            <h2 className="inline bg-gradient-to-br from-blue-600 via-primary-600 to-pink-700 bg-clip-text font-robot font-medium tracking-[10px] text-transparent">
+            <h2 className="inline bg-gradient-to-br from-blue-500 via-primary-500 to-pink-500 bg-clip-text font-robot font-medium tracking-[10px] text-transparent">
               PERLOMBAAN
             </h2>
             <p className="px-10 text-3xl text-gray-700 sm:px-0 sm:text-4xl">
-              <span className="font-semibold ">Perlombaan</span> pada Tahun Ini
+              <span className="font-semibold">Perlombaan</span> pada Tahun Ini
             </p>
           </div>
           <div className="z-10 mt-10 grid grid-cols-1 gap-y-10 text-center sm:grid-cols-2 sm:gap-x-10 xl:grid-cols-4 xl:gap-y-0">

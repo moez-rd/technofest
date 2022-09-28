@@ -43,14 +43,14 @@ export default function RegisterWebinar() {
   return (
     <Fragment>
       <Head>
-        <title>Technofest 2022 - Registrasi Webinar</title>
+        <title>Technofest - Registrasi Webinar</title>
         <meta
           name="description"
           content="Webinar akan diselenggarakan pada tanggal 8 Oktober. Segera daftarkan webinar."
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className="flex min-h-screen flex-col justify-between bg-black text-primary-50">
+      <div className="flex min-h-screen flex-col justify-between bg-gray-300 text-gray-700">
         <Navbar />
         <main className="flex grow flex-col items-center justify-center py-40 px-4">
           <h1 className="mt-10 text-3xl font-semibold sm:text-4xl">Registrasi Webinar</h1>
