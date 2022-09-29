@@ -62,7 +62,7 @@ export default function RegisterWebinar() {
               <Input
                 type="text"
                 name="Nama"
-                placeholder="Nama"
+                placeholder="Nama Lengkap"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 label="Nama"
@@ -70,7 +70,7 @@ export default function RegisterWebinar() {
               <Input
                 type="email"
                 name="Email"
-                placeholder="Email"
+                placeholder="xyz@gmail.com"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 label="Email"
@@ -78,7 +78,7 @@ export default function RegisterWebinar() {
               <Input
                 type="text"
                 name="Asal Instansi"
-                placeholder="Asal Instansi"
+                placeholder="Universitas Xyz"
                 value={agency}
                 onChange={(e) => setAgency(e.target.value)}
                 label="Asal Instansi"
@@ -86,7 +86,7 @@ export default function RegisterWebinar() {
               <Input
                 type="text"
                 name="Nomor Whatsapp"
-                placeholder="Nomor Whatsapp"
+                placeholder="0821xxxx"
                 value={phone}
                 onChange={(e) => setPhone(e.target.value)}
                 label="Nomor Whatsapp"
