@@ -121,8 +121,8 @@ export default function RegisterWebinar() {
         opened={successedModalOpened}
         onClosed={() => setSuccessedModalOpened(false)}>
         Silakan bergabung ke grup Whatsapp melalui link berikut.{' '}
-        <a href="https://blabla.com" className="text-gray-500 hover:underline">
-          https://blabla.com
+        <a href="https://chat.whatsapp.com/HMz4puCnRk96EGTkXfFNFt" className="text-gray-500 hover:underline">
+          https://chat.whatsapp.com/HMz4puCnRk96EGTkXfFNFt
         </a>
       </Modal>
       {/* Failed Modal */}
