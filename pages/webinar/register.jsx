@@ -118,7 +118,7 @@ export default function RegisterWebinar() {
       {/* Successed Modal */}
       <Modal
         title="Registrasi Webinar berhasil."
-        opened={!successedModalOpened}
+        opened={successedModalOpened}
         onClosed={() => setSuccessedModalOpened(false)}>
         Terima kasih telah mendaftar event webinar Technofest. Silakan bergabung ke grup Whatsapp
         melalui link berikut.{' '}
