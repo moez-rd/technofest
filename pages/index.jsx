@@ -118,13 +118,23 @@ export default function Home() {
               <span className="font-semibold">Webinar</span> are Coming Soon
             </p>
             <p data-aos="zoom-in" data-aos-delay="100" className="mt-5 text-gray-500">
-              Webinar akan diselenggarakan pada tanggal{' '}
-              <span className="font-semibold">8 Oktober</span>. Segera daftarkan webinar.
+              Peran Penting Generasi Milenial dalam Perkembangan Dunia di Era Serba Digital. Webinar
+              akan diadakan pada tanggal 8 Oktober, segera daftarkan diri Anda.
             </p>
+            <div
+              data-aos="zoom-in"
+              data-aos-delay="150"
+              className="my-8 flex w-full items-center justify-center ">
+              <div className="rounded-lg border-2 border-gray-300 bg-gray-100/80 p-3 shadow-xl">
+                <div className="relative h-[142.56vw] w-[80.19vw] sm:h-[864px] sm:w-[486px]">
+                  <Image src="/webinar.jpg" alt="" layout="fill" objectFit="cover" />
+                </div>
+              </div>
+            </div>
             <Link href="/webinar/register">
               <a
                 data-aos="zoom-in"
-                data-aos-delay="150"
+                data-aos-delay="200"
                 className="group relative mt-4 inline-flex items-center justify-center overflow-hidden rounded-full p-4 px-5 py-1.5 font-medium text-indigo-600 shadow-xl transition duration-300 ease-out hover:ring-1 hover:ring-primary-500">
                 <span className="absolute inset-0 h-full w-full bg-gradient-to-br from-blue-600 via-primary-600 to-pink-700"></span>
                 <span className="ease absolute bottom-0 right-0 mb-32 mr-4 block h-64 w-64 origin-bottom-left translate-x-24 rotate-45 transform rounded-full bg-pink-500 opacity-30 transition duration-500 group-hover:rotate-90"></span>
