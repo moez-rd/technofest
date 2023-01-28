@@ -15,7 +15,7 @@ export default function RegisterWebinar() {
   const [agency, setAgency] = useState('');
   const [phone, setPhone] = useState('');
 
-  const [tutup, setTutup] = useState(true);
+  const [tutup, setTutup] = useState(false);
 
   useEffect(() => {
     const url =
